@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      INDIAN CHANNEL
-    </title>
+    <title>INDIAN CHANNEL</title>
     
     <!-- Meta Pixel Code -->
     <script>
@@ -29,318 +27,128 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Outfit:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { min-height: 100%; width: 100%; overflow-x: hidden; overflow-y: auto; font-family: 'Outfit', sans-serif; background: #0f0c00; }
+      html, body { min-height: 100%; width: 100%; overflow-x: hidden; overflow-y: auto; font-family: 'Outfit', sans-serif; background: #0f0c00; }
 
-    /* Animated dots background - Yellow */
-    .dots-bg {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .dot {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #ffde00 0%, #eab308 80%, transparent 100%);
-      opacity: 0.18;
-      animation: dotMove 8s linear infinite;
-    }
-    .dot:nth-child(2) { left: 20vw; top: 10vh; width: 18px; height: 18px; opacity: 0.13; animation-delay: 2s; }
-    .dot:nth-child(3) { left: 60vw; top: 30vh; width: 10px; height: 10px; opacity: 0.16; animation-delay: 4s; }
-    .dot:nth-child(4) { left: 80vw; top: 70vh; width: 22px; height: 22px; opacity: 0.11; animation-delay: 1s; }
-    .dot:nth-child(5) { left: 35vw; top: 80vh; width: 14px; height: 14px; opacity: 0.15; animation-delay: 3s; }
-    .dot:nth-child(6) { left: 55vw; top: 55vh; width: 16px; height: 16px; opacity: 0.12; animation-delay: 5s; }
-    .dot:nth-child(7) { left: 10vw; top: 60vh; width: 20px; height: 20px; opacity: 0.14; animation-delay: 6s; }
-    .dot:nth-child(8) { left: 75vw; top: 15vh; width: 13px; height: 13px; opacity: 0.17; animation-delay: 2.5s; }
-    
-    @keyframes dotMove {
-      0% { transform: translateY(0) scale(1); opacity: 0.18; }
-      40% { opacity: 0.22; }
-      50% { transform: translateY(-40px) scale(1.15); opacity: 0.23; }
-      80% { opacity: 0.13; }
-      100% { transform: translateY(40px) scale(0.95); opacity: 0.18; }
-    }
+      .dots-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+      .dot { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: radial-gradient(circle, #ffde00 0%, #eab308 80%, transparent 100%); opacity: 0.18; animation: dotMove 8s linear infinite; }
+      @keyframes dotMove { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-40px); } }
 
-    .grain {
-      position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.035;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
+      .wrapper { position: relative; z-index: 10; min-height: 100vh; display: flex; flex-direction: column; }
+      
+      .ticker { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border-bottom: 2px solid rgba(234, 179, 8, 0.4); overflow: hidden; white-space: nowrap; }
+      .ticker-inner { display: inline-block; animation: tick 20s linear infinite; }
+      @keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-    .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 1; }
+      .hero { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+      
+      .jersey-num { position: absolute; font-family: 'Anton', sans-serif; font-size: 70vw; color: rgba(234, 179, 8, 0.05); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; }
 
-    .wrapper {
-      position: relative; z-index: 10;
-      min-height: 100vh; width: 100%;
-      display: flex; flex-direction: column;
-    }
+      .heart img { border-radius: 50%; width: 90px; border: 3px solid #ffde00; box-shadow: 0 0 20px rgba(255, 222, 0, 0.4); }
+      .heart { animation: heartbeat 1.4s ease-in-out infinite; margin-bottom: 15px; z-index: 1; }
+      @keyframes heartbeat { 0%,100% { transform: scale(1); } 14% { transform: scale(1.1); } }
 
-    /* ── TICKER ── */
-    .ticker {
-      background: rgba(0,0,0,0.8);
-      backdrop-filter: blur(10px);
-      border-bottom: 2px solid rgba(234, 179, 8, 0.4);
-      overflow: hidden; white-space: nowrap; flex-shrink: 0;
-    }
-    .ticker-inner { display: inline-block; animation: tick 20s linear infinite; }
-    @keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+      .hl-malik { font-family: 'Anton', sans-serif; font-size: clamp(4rem, 18vw, 8rem); color: #fff; line-height: 0.8; z-index: 1; }
+      .hl-mumbai { font-family: 'Anton', sans-serif; font-size: clamp(2rem, 10vw, 4.5rem); background: linear-gradient(90deg, #eab308, #ffde00, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; z-index: 1; }
 
-    /* ── HERO ── */
-    .hero {
-      flex: 1;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 28px 22px 16px;
-      position: relative; overflow: hidden; min-height: 0;
-    }
+      /* Feature & Stats Grid */
+      .feat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%; max-width: 400px; margin: 20px 0; z-index: 1; }
+      .feat-item { background: rgba(234, 179, 8, 0.1); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 8px; padding: 8px 2px; }
+      
+      .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; max-width: 400px; z-index: 1; }
+      .stat-card { background: rgba(0,0,0,0.5); border: 1px solid rgba(234, 179, 8, 0.2); border-radius: 8px; padding: 10px; }
+      .stat-num { font-family: 'Anton', sans-serif; color: #ffde00; font-size: 1.1rem; }
 
-    .heart img {
-      border-radius: 50%;
-      width: 80px;
-      border: 2px solid #ffde00;
-    }
-
-    .jersey-num {
-      position: absolute;
-      font-family: 'Anton', sans-serif;
-      font-size: 72vw; color: rgba(234, 179, 8, 0.07);
-      top: 50%; left: 50%;
-      transform: translate(-46%, -52%);
-      pointer-events: none; user-select: none; z-index: 0; line-height: 1;
-    }
-
-    .heart {
-      font-size: 42px; line-height: 1;
-      animation: heartbeat 1.4s ease-in-out infinite;
-      filter: drop-shadow(0 0 18px rgba(255, 222, 0, 0.8));
-      position: relative; z-index: 1;
-      margin-bottom: 12px;
-    }
-    @keyframes heartbeat {
-      0%,100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(255, 222, 0, 0.6)); }
-      14%      { transform: scale(1.18); filter: drop-shadow(0 0 28px rgba(255, 222, 0, 1)); }
-      28%      { transform: scale(1); }
-      42%      { transform: scale(1.1); filter: drop-shadow(0 0 22px rgba(255, 222, 0, 0.9)); }
-    }
-
-    .ch-label {
-      font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
-      color: rgba(255, 222, 0, 0.65); margin-bottom: 8px;
-      position: relative; z-index: 1;
-    }
-
-    .hl-malik {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(4rem, 20vw, 9rem);
-      color: #ffffff;
-      line-height: 0.82; letter-spacing: 0.01em;
-      position: relative; z-index: 1;
-      text-shadow: 0 0 60px rgba(255, 222, 0, 0.2);
-    }
-    .hl-mumbai {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(2.2rem, 11vw, 5rem);
-      background: linear-gradient(90deg, #eab308, #ffde00, #fef08a, #eab308);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text; line-height: 0.9;
-      position: relative; z-index: 1; letter-spacing: 0.04em;
-    }
-
-    .heart-rule {
-      display: flex; align-items: center; gap: 8px;
-      margin: 16px 0; position: relative; z-index: 1;
-    }
-    .hr-line { flex: 1; height: 1px; background: rgba(234, 179, 8, 0.3); }
-    .hr-heart { font-size: 12px; line-height: 1; color: #ffde00; }
-
-    .subtext {
-      font-size: 0.78rem; color: rgba(255, 255, 255, 0.752);
-      font-weight: 300; line-height: 1.65;
-      max-width: 270px; text-align: center;
-      position: relative; z-index: 1;
-    }
-
-    .feat-strip {
-      display: grid; grid-template-columns: repeat(4,1fr);
-      gap: 6px; margin-top: 16px; width: 100%;
-      position: relative; z-index: 1;
-    }
-    .feat-item {
-      background: rgba(234, 179, 8, 0.09);
-      border: 1px solid rgba(234, 179, 8, 0.25);
-      border-radius: 10px; padding: 10px 4px; text-align: center;
-    }
-    .feat-icon { font-size: 18px; margin-bottom: 4px; }
-    .feat-lbl {
-      font-size: 8px; color: rgba(255, 222, 0, 0.8);
-      text-transform: uppercase; letter-spacing: 0.1em;
-      font-weight: 600;
-    }
-
-    .stats {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 8px; margin-top: 10px; width: 100%;
-      position: relative; z-index: 1;
-    }
-    .stat-card {
-      background: rgba(0,0,0,0.45);
-      border: 1px solid rgba(234, 179, 8, 0.15);
-      border-radius: 10px; padding: 10px 6px; text-align: center;
-    }
-    .stat-num {
-      font-family: 'Anton', sans-serif;
-      font-size: 1.2rem; color: #ffde00; line-height: 1;
-    }
-    .stat-lbl {
-      font-size: 8px; color: rgba(255,255,255,0.28);
-      text-transform: uppercase; letter-spacing: 0.1em; margin-top: 3px;
-    }
-
-    .bottom {
-      padding: 14px 18px 22px; flex-shrink: 0;
-      display: flex; flex-direction: column; gap: 10px;
-      border-top: 1px solid rgba(234, 179, 8, 0.15);
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(12px);
-    }
-
-    .cta {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      width: 100%; min-height: 50px;
-      background: linear-gradient(135deg, #eab308, #ffde00, #eab308);
-      background-size: 200% 100%;
-      color: #000;
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(0.95rem, 4.5vw, 1.1rem);
-      letter-spacing: 0.12em;
-      border-radius: 12px; text-decoration: none;
-      position: relative; overflow: hidden;
-      box-shadow: 0 4px 28px rgba(234, 179, 8, 0.3);
-      transition: transform .18s;
-      -webkit-tap-highlight-color: transparent;
-      animation: ctaslide 3s linear infinite;
-    }
-    @keyframes ctaslide {
-      0%{background-position:0%} 100%{background-position:200%}
-    }
-    .cta::after {
-      content: '';
-      position: absolute; top:0; left:-100%; width:50%; height:100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-      transform: skewX(-18deg);
-      animation: shine 3s ease-in-out infinite;
-    }
-    @keyframes shine { 0%,65%{left:-100%} 100%{left:160%} }
-    .cta:active { transform: scale(0.97); }
-
-    .meta { display: flex; align-items: center; justify-content: space-between; }
-
-    @keyframes ping { 75%,100%{transform:scale(2.2);opacity:0} }
-    .ping { animation: ping 1.3s cubic-bezier(0,0,.2,1) infinite; background: #ffde00 !important; }
+      /* FIXED BUTTON STYLES */
+      .bottom-container { width: 100%; max-width: 450px; padding: 20px; margin-top: auto; z-index: 10; }
+      
+      .cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        height: 60px; /* Force Height */
+        background: linear-gradient(135deg, #eab308, #ffde00, #eab308);
+        background-size: 200% 100%;
+        color: #000;
+        font-family: 'Anton', sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        border-radius: 15px;
+        text-decoration: none;
+        box-shadow: 0 6px 25px rgba(234, 179, 8, 0.4);
+        transition: all 0.2s ease;
+        animation: ctaslide 3s linear infinite;
+        border: none;
+        cursor: pointer;
+      }
+      @keyframes ctaslide { 0%{background-position:0%} 100%{background-position:200%} }
+      .cta:active { transform: scale(0.96); }
+      
+      .ping { animation: ping 1.3s infinite; background: #ffde00; border-radius: 50%; }
+      @keyframes ping { 75%,100% { transform: scale(2.5); opacity: 0; } }
     </style>
   </head>
   <body>
     <div class="dots-bg">
-      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot" style="left:10%; top:20%;"></div>
+      <div class="dot" style="left:80%; top:40%;"></div>
+      <div class="dot" style="left:30%; top:70%;"></div>
     </div>
-    <div class="grain"></div>
-    <div class="orb" style="width:300px;height:300px;background:rgba(234, 179, 8, 0.12);top:-60px;right:-60px;"></div>
-    <div class="orb" style="width:250px;height:250px;background:rgba(255, 222, 0, 0.08);bottom:-50px;left:-50px;"></div>
-    
+
     <div class="wrapper">
-      <div class="ticker py-1.5">
-        <div class="ticker-inner" style="font-size:11px;font-weight:700;letter-spacing:0.16em;color:rgba(255, 222, 0, 0.9);">
-          <span style="padding:0 14px;">🌟 INDIAN CHANNEL •</span>
-          <span style="padding:0 14px;">DAILY TIPS •</span>
-          <span style="padding:0 14px;">IPL PICKS •</span>
-          <span style="padding:0 14px;">CRICKET PREDICTIONS •</span>
-          <span style="padding:0 14px;">FREE TO JOIN •</span>
-          <span style="padding:0 14px;">LIVE ALERTS •</span>
-          <span style="padding:0 14px;">MUMBAI KA PYAAR •</span>
-          <span style="padding:0 14px;">🌟 INDIAN CHANNEL •</span>
+      <div class="ticker py-2">
+        <div class="ticker-inner" style="color:#ffde00; font-weight:bold; letter-spacing:1px;">
+          <span>🌟 INDIAN CHANNEL • DAILY TIPS • IPL PICKS • CRICKET PREDICTIONS • FREE TO JOIN • LIVE ALERTS • </span>
+          <span>🌟 INDIAN CHANNEL • DAILY TIPS • IPL PICKS • CRICKET PREDICTIONS • FREE TO JOIN • LIVE ALERTS • </span>
         </div>
       </div>
 
       <div class="hero">
         <div class="jersey-num">IC</div>
+        
         <div class="heart">
-          <img src="cropped_circle_image (2).png" alt="Logo" />
+          <img src="cropped_circle_image (2).png" alt="Logo">
         </div>
-        <p class="ch-label">Telegram Channel</p>
-        <div style="text-align:center;">
-          <div class="hl-malik">INDIAN</div>
-          <div class="hl-mumbai mt-3">CHANNEL</div>
-        </div>
-        
-        <div class="heart-rule">
-          <div class="hr-line"></div>
-          <div class="hr-heart">🏆</div>
-          <div class="hr-heart">🏆</div>
-          <div class="hr-heart">🏆</div>
-          <div class="hr-line"></div>
-        </div>
-        
-        <p class="subtext">
-          Expert tips &amp; daily predictions — premium analysis, insider picks &amp; live alerts straight to your Telegram.
-        </p>
+
+        <p style="color:#ffde00; font-size:12px; letter-spacing:3px; text-transform:uppercase;">Telegram Channel</p>
+        <h1 class="hl-malik">INDIAN</h1>
+        <h2 class="hl-mumbai">CHANNEL</h2>
 
         <div class="feat-strip">
-          <div class="feat-item">
-            <div class="feat-icon">🏏</div>
-            <div class="feat-lbl">Cricket</div>
-          </div>
-          <div class="feat-item">
-            <div class="feat-icon">📊</div>
-            <div class="feat-lbl">Analysis</div>
-          </div>
-          <div class="feat-item">
-            <div class="feat-icon">⚡</div>
-            <div class="feat-lbl">Live</div>
-          </div>
-          <div class="feat-item">
-            <div class="feat-icon">🏆</div>
-            <div class="feat-lbl">IPL</div>
-          </div>
+          <div class="feat-item"><div>🏏</div><div style="font-size:8px; color:#ffde00;">CRICKET</div></div>
+          <div class="feat-item"><div>📊</div><div style="font-size:8px; color:#ffde00;">ANALYSIS</div></div>
+          <div class="feat-item"><div>⚡</div><div style="font-size:8px; color:#ffde00;">LIVE</div></div>
+          <div class="feat-item"><div>🏆</div><div style="font-size:8px; color:#ffde00;">IPL 2026</div></div>
         </div>
 
         <div class="stats">
-          <div class="stat-card">
-            <div class="stat-num">DAILY</div>
-            <div class="stat-lbl">Tips</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">FREE</div>
-            <div class="stat-lbl">To Join</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">LIVE</div>
-            <div class="stat-lbl">Alerts</div>
-          </div>
+          <div class="stat-card"><div class="stat-num">DAILY</div><div style="font-size:8px; color:gray;">TIPS</div></div>
+          <div class="stat-card"><div class="stat-num">FREE</div><div style="font-size:8px; color:gray;">TO JOIN</div></div>
+          <div class="stat-card"><div class="stat-num">LIVE</div><div style="font-size:8px; color:gray;">ALERTS</div></div>
         </div>
 
-        <div class="bottom w-full mt-5">
+        <!-- BUTTON FIX HERE -->
+        <div class="bottom-container">
           <a href="https://telegram.me/+7fMemGH4FHg4YWFl" target="_blank" class="cta">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <svg style="width:24px;height:24px;" viewBox="0 0 24 24" fill="currentColor">
               <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path>
             </svg>
             JOIN FREE ON TELEGRAM
           </a>
-          <div class="meta">
-            <div style="display:flex;align-items:center;gap:6px;">
-              <span style="position:relative;display:inline-flex;width:8px;height:8px;">
-                <span class="ping" style="position:absolute;inset:0;border-radius:50%;background:#ffde00;opacity:0.75;display:inline-flex;width:100%;height:100%;"></span>
-                <span style="position:relative;width:8px;height:8px;border-radius:50%;background:#ffde00;display:inline-flex;flex-shrink:0;"></span>
+          
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:15px; opacity:0.6;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="width:8px; height:8px; position:relative;">
+                <span class="ping" style="position:absolute; inset:0;"></span>
+                <span style="width:8px; height:8px; background:#ffde00; border-radius:50%; display:block; position:relative;"></span>
               </span>
-              <span style="font-size:10px;color:rgba(255,255,255,0.4);">Members active now</span>
+              <span style="font-size:10px; color:#fff;">Active Members</span>
             </div>
-            <p style="font-size:10px;color:rgba(255,255,255,0.2);">
-              Free forever · Bet responsibly
-            </p>
+            <span style="font-size:10px; color:#fff;">Bet Responsibly</span>
           </div>
         </div>
+
       </div>
     </div>
   </body>
