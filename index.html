@@ -37,13 +37,13 @@
         border-bottom: 2px solid rgba(234, 179, 8, 0.4); 
         overflow: hidden; 
         white-space: nowrap; 
-        padding: 8px 0;
+        padding: 10px 0;
       }
       .ticker-inner { 
         display: inline-flex; 
         align-items: center;
-        gap: 40px; 
-        padding-left: 40px;
+        gap: 50px; 
+        padding-left: 50px;
         animation: tick 25s linear infinite; 
       }
       @keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
@@ -53,72 +53,85 @@
         display: flex; 
         flex-direction: column; 
         align-items: center; 
-        justify-content: flex-start; 
-        padding: 12px 20px; 
+        justify-content: center; /* Center elements vertically */
+        padding: 30px 20px; 
         text-align: center; 
-        gap: 8px;
+        gap: 24px; /* Big gap between elements */
       }
       
       .jersey-num { position: absolute; font-family: 'Anton', sans-serif; font-size: 70vw; color: rgba(234, 179, 8, 0.04); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; pointer-events: none; }
 
-      /* LOGO IMAGE SHADOW FIX */
       .heart { 
         animation: heartbeat 1.4s ease-in-out infinite; 
         z-index: 1; 
         position: relative;
-        filter: drop-shadow(0 0 20px rgba(255, 222, 0, 0.8)); /* Strong Yellow Glow */
+        filter: drop-shadow(0 0 20px rgba(255, 222, 0, 0.8));
+        margin-bottom: 10px;
       }
-      .heart img { 
-        border-radius: 50%; 
-        width: 85px; 
-        border: 3px solid #ffde00; 
-        display: block;
-      }
+      .heart img { border-radius: 50%; width: 90px; border: 3px solid #ffde00; }
       
       @keyframes heartbeat { 
-        0%,100% { transform: scale(1); filter: drop-shadow(0 0 15px rgba(255, 222, 0, 0.6)); } 
-        14% { transform: scale(1.08); filter: drop-shadow(0 0 30px rgba(255, 222, 0, 1)); } 
+        0%,100% { transform: scale(1); } 14% { transform: scale(1.08); } 
       }
 
-      .hl-malik { font-family: 'Anton', sans-serif; font-size: clamp(3.2rem, 15vw, 6.5rem); color: #fff; line-height: 0.85; z-index: 1; }
-      .hl-mumbai { font-family: 'Anton', sans-serif; font-size: clamp(1.6rem, 8vw, 3.5rem); background: linear-gradient(90deg, #eab308, #ffde00, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; z-index: 1; margin-bottom: 4px; }
+      .hl-malik { font-family: 'Anton', sans-serif; font-size: clamp(3.5rem, 16vw, 7rem); color: #fff; line-height: 0.85; z-index: 1; }
+      .hl-mumbai { font-family: 'Anton', sans-serif; font-size: clamp(1.8rem, 9vw, 4rem); background: linear-gradient(90deg, #eab308, #ffde00, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; z-index: 1; }
 
       .subtext {
-        font-size: 0.75rem; color: rgba(255, 255, 255, 0.7);
-        font-weight: 300; line-height: 1.4;
-        max-width: 280px; z-index: 1; margin-bottom: 4px;
+        font-size: 0.8rem; color: rgba(255, 255, 255, 0.7);
+        font-weight: 300; line-height: 1.5;
+        max-width: 300px; z-index: 1;
+        margin: 10px 0; /* Space around subtext */
       }
 
-      .feat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; max-width: 360px; z-index: 1; }
-      .feat-item { background: rgba(234, 179, 8, 0.08); border: 1px solid rgba(234, 179, 8, 0.2); border-radius: 8px; padding: 5px 2px; }
+      .feat-strip { 
+        display: grid; 
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 12px; /* Gap between feature items */
+        width: 100%; 
+        max-width: 400px; 
+        z-index: 1;
+      }
+      .feat-item { background: rgba(234, 179, 8, 0.08); border: 1px solid rgba(234, 179, 8, 0.2); border-radius: 10px; padding: 10px 4px; }
       
-      .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 360px; z-index: 1; }
-      .stat-card { background: rgba(0,0,0,0.5); border: 1px solid rgba(234, 179, 8, 0.15); border-radius: 8px; padding: 6px; }
-      .stat-num { font-family: 'Anton', sans-serif; color: #ffde00; font-size: 0.95rem; }
+      .stats { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 15px; /* Gap between stats items */
+        width: 100%; 
+        max-width: 400px; 
+        z-index: 1;
+      }
+      .stat-card { background: rgba(0,0,0,0.5); border: 1px solid rgba(234, 179, 8, 0.15); border-radius: 10px; padding: 12px; }
+      .stat-num { font-family: 'Anton', sans-serif; color: #ffde00; font-size: 1.1rem; }
 
-      .bottom-container { width: 100%; max-width: 380px; z-index: 10; margin-top: 10px; }
+      .bottom-container { 
+        width: 100%; 
+        max-width: 420px; 
+        z-index: 10; 
+        margin-top: 20px; /* Strong gap before button */
+      }
       
       .cta {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        gap: 12px;
         width: 100%;
-        height: 52px;
+        height: 60px;
         background: linear-gradient(135deg, #eab308, #ffde00, #eab308);
         background-size: 200% 100%;
         color: #000;
         font-family: 'Anton', sans-serif;
-        font-size: 1.05rem;
+        font-size: 1.2rem;
         letter-spacing: 0.5px;
-        border-radius: 12px;
+        border-radius: 15px;
         text-decoration: none;
-        box-shadow: 0 4px 15px rgba(234, 179, 8, 0.3);
+        box-shadow: 0 6px 20px rgba(234, 179, 8, 0.4);
         transition: all 0.2s ease;
         animation: ctaslide 3s linear infinite;
       }
       @keyframes ctaslide { 0%{background-position:0%} 100%{background-position:200%} }
-      .cta:active { transform: scale(0.97); }
       
       .ping { animation: ping 1.3s infinite; background: #ffde00; border-radius: 50%; }
       @keyframes ping { 75%,100% { transform: scale(2.2); opacity: 0; } }
@@ -150,9 +163,8 @@
           <img src="cropped_circle_image (2).png" alt="Logo">
         </div>
 
-        <p style="color:rgba(255,222,0,0.7); font-size:9px; letter-spacing:3px; text-transform:uppercase;">Telegram Channel</p>
-        
         <div style="z-index:1;">
+          <p style="color:rgba(255,222,0,0.7); font-size:10px; letter-spacing:4px; text-transform:uppercase; margin-bottom: 8px;">Telegram Channel</p>
           <h1 class="hl-malik">INDIAN</h1>
           <h2 class="hl-mumbai">CHANNEL</h2>
         </div>
@@ -162,35 +174,35 @@
         </p>
 
         <div class="feat-strip">
-          <div class="feat-item"><div>🏏</div><div style="font-size:7px; color:#ffde00;">CRICKET</div></div>
-          <div class="feat-item"><div>📊</div><div style="font-size:7px; color:#ffde00;">ANALYSIS</div></div>
-          <div class="feat-item"><div>⚡</div><div style="font-size:7px; color:#ffde00;">LIVE</div></div>
-          <div class="feat-item"><div>🏆</div><div style="font-size:7px; color:#ffde00;">IPL 2026</div></div>
+          <div class="feat-item"><div>🏏</div><div style="font-size:8px; color:#ffde00; font-weight: bold; margin-top:4px;">CRICKET</div></div>
+          <div class="feat-item"><div>📊</div><div style="font-size:8px; color:#ffde00; font-weight: bold; margin-top:4px;">ANALYSIS</div></div>
+          <div class="feat-item"><div>⚡</div><div style="font-size:8px; color:#ffde00; font-weight: bold; margin-top:4px;">LIVE</div></div>
+          <div class="feat-item"><div>🏆</div><div style="font-size:8px; color:#ffde00; font-weight: bold; margin-top:4px;">IPL 2026</div></div>
         </div>
 
         <div class="stats">
-          <div class="stat-card"><div class="stat-num">DAILY</div><div style="font-size:7px; color:gray;">TIPS</div></div>
-          <div class="stat-card"><div class="stat-num">FREE</div><div style="font-size:7px; color:gray;">TO JOIN</div></div>
-          <div class="stat-card"><div class="stat-num">LIVE</div><div style="font-size:7px; color:gray;">ALERTS</div></div>
+          <div class="stat-card"><div class="stat-num">DAILY</div><div style="font-size:8px; color:gray; font-weight: bold;">TIPS</div></div>
+          <div class="stat-card"><div class="stat-num">FREE</div><div style="font-size:8px; color:gray; font-weight: bold;">TO JOIN</div></div>
+          <div class="stat-card"><div class="stat-num">LIVE</div><div style="font-size:8px; color:gray; font-weight: bold;">ALERTS</div></div>
         </div>
 
         <div class="bottom-container">
           <a href="https://telegram.me/+7fMemGH4FHg4YWFl" target="_blank" class="cta">
-            <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="currentColor">
+            <svg style="width:22px;height:22px;" viewBox="0 0 24 24" fill="currentColor">
               <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path>
             </svg>
             JOIN FREE ON TELEGRAM
           </a>
           
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; opacity:0.6;">
-            <div style="display:flex; align-items:center; gap:6px;">
-              <span style="width:6px; height:6px; position:relative;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:15px; opacity:0.8;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="width:8px; height:8px; position:relative;">
                 <span class="ping" style="position:absolute; inset:0;"></span>
-                <span style="width:6px; height:6px; background:#ffde00; border-radius:50%; display:block; position:relative;"></span>
+                <span style="width:8px; height:8px; background:#ffde00; border-radius:50%; display:block; position:relative;"></span>
               </span>
-              <span style="font-size:9px; color:#fff;">Active Members</span>
+              <span style="font-size:10px; color:#fff; font-weight: 500;">Active Members</span>
             </div>
-            <span style="font-size:9px; color:#fff;">Bet Responsibly</span>
+            <span style="font-size:10px; color:rgba(255,255,255,0.5);">Bet Responsibly</span>
           </div>
         </div>
 
